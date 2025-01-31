@@ -1,0 +1,21 @@
+﻿html{
+    font-size: 10px;
+}
+
+body {
+    background-color: #b0fff7;
+}
+
+.contenedor{
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.contenedor_error{
+display: flex;
+width: 100%;
+}
+
+.error_texto{
+width: 100%;
+}

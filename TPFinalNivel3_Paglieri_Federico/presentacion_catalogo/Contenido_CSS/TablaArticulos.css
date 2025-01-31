@@ -1,0 +1,166 @@
+﻿html {
+    font-size: 10px;
+}
+
+body {
+    font-weight: 900;
+    
+}
+
+.tabla_articulos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: #39b7ff;
+    height: 100vh;
+    width: 100%;
+}
+
+.articulos_grid_container {
+    height: 20rem; /* Altura fija */
+    width: 90%; /* Opcional: controla el ancho */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+    border: 0.2rem solid #002eff; /* Borde alrededor */
+    background-color: #00fff7; /* Color de fondo */
+}
+
+.articulos_grid {
+    color: black;
+    background-color: #00fff7;
+    border: 0.2rem solid #002eff;
+    width: 100%; /* Usa todo el ancho del contenedor */
+    table-layout: fixed; /* Distribuye el tamaño equitativamente */
+}
+
+ 
+
+.grid_elemento {
+    border: 0.2rem solid #002eff;
+ max-width: 41rem;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+
+.elemento_marca{
+min-width: 15rem;
+}
+
+.elemento_categoria{
+min-width: 15rem;
+}
+
+.elemento_precio{
+min-width: 15rem;
+}
+
+.grid_elementoCommand {
+    text-align: center;
+}
+
+    .grid_elementoCommand:hover {
+        background-color: #cdff00;
+    }
+
+
+
+
+.articulos_agregar {
+    font-weight: bold;
+    padding: 1rem;
+    width: 25rem;
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+    border: 0.1rem solid #fffb00;
+    border-radius: 0.2rem;
+    transition:  border-radius 0.5s linear;
+}
+
+    .articulos_agregar:hover {
+        box-shadow: 0px 0px 5px inset #fffb00;
+        border-radius: 1rem;
+    }
+
+@media (min-width: 240px) and (max-width: 750px)
+{
+
+    .tabla_articulos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        background-color: #39b7ff;
+        height: 100vh;
+    }
+
+    .articulos_grid_container {
+        height: 30rem; /* Altura fija */
+        width: 90%; /* Opcional: controla el ancho */
+        overflow-y: auto; /* Habilita el scroll vertical */
+        overflow-x: hidden; /* Evita desplazamiento horizontal */
+        border: 0.2rem solid #002eff; /* Borde alrededor */
+        background-color: #00fff7; /* Color de fondo */
+    }
+
+    /* Aplica un estilo a la tabla en el GridView */
+    .articulos_grid {
+        display: block;
+        width: 100%;
+       
+        
+       
+    }
+
+        /* Para cada fila, hacer que sus celdas se apilen verticalmente */
+        .articulos_grid tr {
+            display: block;
+            width: 100%;
+        }
+
+        /* Estilo de las celdas, para que cada una esté apilada verticalmente */
+        .articulos_grid td {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px; /* Espacio entre las celdas */
+        }
+
+        /* Estilo para los encabezados de las columnas */
+        .articulos_grid th {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px; /* Espacio entre los encabezados y las celdas */
+        }
+
+        /* Para mejorar la legibilidad, puedes añadir bordes o separación */
+        .articulos_grid td, .articulos_grid th {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        /* Ajuste de los encabezados de columna para que se vean bien */
+        .articulos_grid th {
+            font-weight: bold;
+        }
+
+    .grid_elemento {
+        border: 0.2rem solid #002eff;
+        max-width: 23rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    .articulos_agregar {
+        font-weight: bold;
+        padding: 1rem;
+        width: 23rem;
+        background-image: linear-gradient(to left, #00fff7, #54a4ff);
+        border: 0.1rem solid #fffb00;
+        border-radius: 0.2rem;
+        transition: border-radius 0.5s linear;
+    }
+}

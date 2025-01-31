@@ -1,0 +1,114 @@
+﻿html {
+    font-size: 10px;
+    font-weight: bold;
+    height: 100%;
+}
+
+
+body {
+    background-image: linear-gradient(to bottom, #D2F9FC,#58e6ff, #1affe3);
+    height: 100vh;
+}
+
+
+.info_articulo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: start;
+}
+
+
+.articulo_datos {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 31rem;
+    width: 100%;
+}
+
+.label {
+    color: black;
+}
+
+.datos {
+    background-image: linear-gradient(to right, #00dcff, #00ffc9);
+    color: white;
+    width: 40rem;
+    border: 0.2rem solid #009bff;
+    border-radius: 0 1rem 0 1rem;
+    outline: none;
+    font-size: 2rem;
+}
+
+
+.datos_MultiLine {
+    resize: vertical;
+    min-height: 3.5rem;
+    max-height: 20rem;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+
+@media (min-width: 240px) and (max-width: 750px) {
+
+    .info_articulo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 80rem;
+        font-size: 2.5rem;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .articulo_datos {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    .datos_1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       
+    }
+
+    .datos_2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       
+    }
+
+    .datos {
+        background-image: linear-gradient(to right, #00dcff, #00ffc9);
+        color: white;
+        width: 24rem;
+        border: 0.2rem solid #009bff;
+        border-radius: 0 1rem 0 1rem;
+        outline: none;
+        font-size: 1.5rem;
+    }
+
+    .label {
+        color: black;
+        font-size: 1.7rem;
+    }
+}

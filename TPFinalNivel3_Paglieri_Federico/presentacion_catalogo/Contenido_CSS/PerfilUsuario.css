@@ -1,0 +1,345 @@
+﻿html {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+body {
+    font-size: 1.5rem;
+    background-color: black;
+}
+
+.perfil {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 37rem;
+}
+
+.perfil_datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2rem;
+    
+}
+
+.datos_contenedor_datos{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70rem;
+    gap: 2rem;
+}
+
+
+.datos_label_input {
+    color: dodgerblue;
+    font-weight: bold;
+   
+}
+
+#contenedor_contraseña_actual{
+    margin-bottom: 2rem;
+}
+
+#ContentPlaceHolder1_label_Contraseña_Actual {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+
+.datos_contenedor_datos-checkBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70rem;
+}
+
+.datos {
+    outline: none;
+    background-image: linear-gradient(to bottom, #00c1ff, #4affd6);
+    border: 0.2rem outset #73ffdf;
+    color: black;
+    font-weight: bold;
+    border-radius: 1rem 0 1rem 0;
+    height: 4rem;
+    width: 35rem;
+}
+
+.datos::placeholder{
+    color: dodgerblue;
+}
+
+.contenedor_tBoxContraseñas_GuardarContraseña_GuardarDatos_Eliminar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+/*ID del regulation expresion del text box nombre*/
+#ContentPlaceHolder1_validarFormatoTextBoxNombre{
+   color: dodgerblue;
+}
+
+#ContentPlaceHolder1_validarFormatoTextBoxApellido{
+   color: dodgerblue;
+}
+
+.perfil_imagen {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 50rem;
+    margin-top: 4.5rem;
+    background-color: black;
+}
+
+.imagen_seleccionar {
+    color: black;
+    font-weight: bold;
+    margin-top: 0;
+    background-color: lightgray;
+}
+
+.imagen_imagen {
+   
+    width: 100%;
+    height: 45rem;
+    margin-top: auto;
+    margin-bottom: 0;
+    border: 0.2rem inset #73ffdf;
+}
+/*Clase de css creada con js par icon que elimina la imágen de perfil*/
+.icon_eliminar_img_perfil{
+    cursor: pointer;
+    position: relative;
+    color: dodgerblue;
+    font-size: 2.5rem;
+}
+
+.contenedor_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+#ContentPlaceHolder1_ctl03 {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 100%;
+    gap: 1.7rem;
+    margin-top: 2rem;
+}
+
+
+
+.datos_guardar {
+    margin-right: 0;
+    margin-left: auto;
+    width: 50%;
+    background-image: linear-gradient(to bottom, #38FC85, #6AFFCD);
+    border: 0.2rem solid #00ffec;
+    font-weight: bold;
+    padding: 0.5rem;
+    color: black;
+    transition: color 0.5s linear;
+}
+
+    .datos_guardar:hover {
+        color: green;
+        box-shadow: 0px 0px 10px #cbff8a inset;
+    }
+
+
+
+.Contenedor_Contenedor_Bton_Guardar_Contraseña{
+    width: 100%;
+   margin-bottom: 1rem;
+}
+
+
+.guardar_contraseña {
+    margin-top: 1.7rem;
+    background-image: linear-gradient(to bottom,#4a89ff, #008fff);
+    color: black;
+    border: 0.2rem solid #00ffec;
+}
+    .guardar_contraseña:hover {
+        color: black;
+        box-shadow: 0px 0px 10px #cbff8a darkred;
+    }
+
+.datos_eliminar {
+    margin-right: 0;
+    margin-left: auto;
+    width: 50%;
+    background-image: linear-gradient(to bottom,#4a89ff, #008fff);
+    border: 0.2rem solid #00ffec;
+    font-weight: bold;
+    padding: 0.5rem;
+    color: black;
+  
+}
+
+.datos_eliminar:hover{
+    color: black;
+}
+
+   
+
+.section_contraseñas{
+ width: 100%;
+ min-height: 8rem;
+ margin: auto;
+}
+
+
+@media (min-width: 240px) and (max-width: 750px){
+    .perfil {
+        margin-top: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        height: 80rem;
+    }
+
+    .perfil_datos {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.1rem;
+        height: 20rem;
+       
+    }
+
+    .datos_contenedor_datos {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 70rem;
+        
+    }
+
+    .datos_label_input {
+        color: dodgerblue;
+        font-weight: bold;
+    }
+
+    .label_check{
+        margin-left: 10rem;
+    }
+
+    #contenedor_contraseña_actual {
+        margin-bottom: 2rem;
+    }
+
+    #ContentPlaceHolder1_label_Contraseña_Actual {
+        opacity: 1;
+        transition: opacity 0.2s linear;
+    }
+
+    .datos_contenedor_datos-checkBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70rem;
+    }
+
+    .datos {
+        outline: none;
+        background-color: #cbff8a;
+        border: 0.2rem outset #73ffdf;
+        color: black;
+        font-weight: bold;
+        border-radius: 1rem 0 1rem 0;
+        height: 4rem;
+        width: 24rem;
+        font-size: 1.5rem;
+    }
+
+   
+
+    .perfil_imagen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        height: 60rem;
+        margin-top: 50rem;
+    }
+
+    .imagen_seleccionar {
+        margin-top: 0;
+        color: black;
+        font-weight: bold;
+        background-color: white;
+        margin-top: 5rem;
+        width: 100%;
+
+    }
+
+    .imagen_imagen {
+        width: 100%;
+        height: 100%;
+        margin-top: auto;
+        margin-bottom: 0;
+        border: 0.2rem inset #73ffdf;
+    }
+
+
+    .contenedor_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .datos_guardar {
+        margin: auto;
+        width: 50%;
+        background-image: linear-gradient(to bottom, #38FC85, #6AFFCD);
+        border: 0.2rem solid #00ffec;
+        font-weight: bold;
+        padding: 0.5rem;
+        color: black;
+        transition: color 0.5s linear;
+    }
+
+
+    .guardar_contraseña {
+       
+        background-image: linear-gradient(to bottom,#4a89ff, #008fff);
+        color: black;
+        border: 0.2rem solid #00ffec;
+    }
+
+    .datos_eliminar {
+        margin: auto;
+        width: 50%;
+        background-image: linear-gradient(to bottom,#4a89ff, #008fff);
+        border: 0.2rem solid #00ffec;
+        font-weight: bold;
+        padding: 0.5rem;
+        color: black;
+        transition: color 0.5s linear;
+    }
+
+}

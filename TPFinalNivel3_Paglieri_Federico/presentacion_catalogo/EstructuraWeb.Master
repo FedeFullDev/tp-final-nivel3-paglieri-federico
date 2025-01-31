@@ -1,0 +1,373 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EstructuraWeb.master.cs" Inherits="presentacion_catalogo.EstructuraWeb" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="Contenido_CSS/paginaMaestra.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="fontawesome-free-6.1.2-web/css/all.min.css" rel="stylesheet" />
+
+
+    <link href="Contenido_CSS/reset.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server" enctype="multipart/form-data">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+
+        <header class="header">
+
+            <nav class="header_nav">
+
+                <div class="nav_lista_contenedor">
+
+
+
+                    <asp:HiddenField ID="HiddenFieldNavBarResponsiveJSValidation" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldNavBarResposiveJSValidation2" runat="server" />
+
+                    <script>
+
+                        /*Las siguientes líneas de código son para manejar el responsive de la página, por los cambios del viewport para distintos dispotivos*/
+                        const validadorViewPortNavBar = document.getElementById("<%= HiddenFieldNavBarResponsiveJSValidation.ClientID%>");
+                        const mediaQuery = window.matchMedia("(min-width: 240px) and (max-width: 750px)");
+                        const mediaQuery2 = window.matchMedia("(min-width: 751px)");
+
+                        function handleMediaChange() {
+
+                            if (mediaQuery.matches && validadorViewPortNavBar.value !== "true") {
+
+                                validadorViewPortNavBar.value = "true";
+                                __doPostBack("<%= HiddenFieldNavBarResponsiveJSValidation.ClientID %>", "");
+
+                            } else if (mediaQuery2.matches && validadorViewPortNavBar.value !== "false") {
+
+                                validadorViewPortNavBar.value = "false";
+                                __doPostBack("<%= HiddenFieldNavBarResponsiveJSValidation.ClientID %>", "");
+
+                            }
+                        }
+
+                        mediaQuery.addListener(handleMediaChange);
+                        mediaQuery2.addListener(handleMediaChange);
+
+
+
+
+                        handleMediaChange();
+                    </script>
+
+
+
+                    <asp:UpdatePanel ID="contenedorResposniveMovil" runat="server">
+                        <ContentTemplate>
+
+                            <%if (HiddenFieldNavBarResponsiveJSValidation.Value == "false")%>
+                            <%{%>
+                            <ul class="contenedor_lista">
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_NoAdmin/Home.aspx" class="li_link">Home</a>
+                                </li>
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+
+                                <%{%>
+
+
+
+
+                                <li class="lista_li li_transform">
+
+                                    <a href="/Paginas_aspx_NoAdmin/DetalleProducto.aspx" class="li_link">Detalle del Producto</a>
+                                </li>
+
+
+                                <%}%>
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+
+                                <%{%>
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_NoAdmin/ProductoFavorito.aspx" class="li_link">Productos Favoritos</a>
+                                </li>
+                                <%} %>
+
+                                <li class="lista_li li_transform">
+
+                                    <a href="/Paginas_aspx_Admin/TablaArticulos.aspx" class="li_link">Artículos</a>
+                                </li>
+
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Admin/AdministracionArticulos.aspx" class="li_link">Editar Artículo</a>
+                                </li>
+
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+                                <%{ %>
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/PerfilUsuario.aspx" class="li_link">Mi Perfil</a>
+                                </li>
+                                <%}%>
+
+
+
+
+                                <% if (validarPaginaLoginRegistroCuenta == false)%>
+                                <%{%>
+
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/Login.aspx" class="li_link">Ingresar</a>
+                                </li>
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/RegistroCuenta.aspx" class="li_link">Registrarse</a>
+                                </li>
+                                <%}%>
+
+
+
+                                <%if (Session["UsuarioLogin"] != null)%>
+
+                                <%{%>
+
+
+
+                                <li class="lista_li" style="background-color: transparent;">
+
+                                    <asp:Button ID="btonCerrarSesion" CssClass="lista_li" OnClick="btonCerrarSesion_Click" runat="server" Text="Cerrar Sesión" />
+
+                                </li>
+                                <%}%>
+
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+                                <% { %>
+                                <asp:Image ID="imgAvatar" Style="height: 50px; width: 50px; border-radius: 50%; margin-bottom: 0;" runat="server" ImageUrl="~/Imagenes/LoginDefault.png" />
+                                <% } %>
+                            </ul>
+
+                            <%}
+                                else if (HiddenFieldNavBarResponsiveJSValidation.Value == "true")
+                                {%>
+
+                            <i class="fas fa-bars"></i>
+
+
+
+                            <script>
+
+
+
+
+                                function setupNavBar() {
+                                    document.addEventListener("DOMContentLoaded", event => {
+                                        const iconNavBar = document.querySelector(".fa-bars");
+                                        const validadorViewPortNavBar2 = document.getElementById("<%= HiddenFieldNavBarResposiveJSValidation2.ClientID %>");
+                                        const header = document.querySelector(".header");
+
+                                        // Verificar si se encuentran los elementos
+                                        console.log("iconNavBar: ", iconNavBar);
+                                        console.log("validadorViewPortNavBar2: ", validadorViewPortNavBar2);
+                                        console.log("header: ", header);
+
+                                        if (iconNavBar) {
+                                            iconNavBar.addEventListener("click", event => {
+                                                console.log("Icon clicked, validador: ", validadorViewPortNavBar2.value);
+
+                                                if (validadorViewPortNavBar2.value === "true") {
+                                                    validadorViewPortNavBar2.value = "false"; // Ocultar menú
+                                                    header.classList.remove("expanded");
+                                                    console.log("Class 'expanded' removed.");
+                                                } else {
+                                                    validadorViewPortNavBar2.value = "true"; // Mostrar menú
+                                                    header.classList.add("expanded");
+                                                    console.log("Class 'expanded' added.");
+                                                }
+
+                                                __doPostBack('<%= HiddenFieldNavBarResposiveJSValidation2.ClientID %>', '');
+                                            });
+                                        }
+
+                                        // Verificar si el valor de HiddenField es correcto en window.onload
+                                        window.onload = function () {
+                                            console.log("Window loaded, validador onload: ", validadorViewPortNavBar2.value);
+
+                                            if (validadorViewPortNavBar2.value === "true") {
+                                                header.classList.add("expanded");
+                                                console.log("Class 'expanded' added on load.");
+                                            } else {
+                                                header.classList.remove("expanded");
+                                                console.log("Class 'expanded' removed on load.");
+                                            }
+                                        }
+
+                                       
+                                    });
+
+
+
+                                }
+
+                                setupNavBar();
+
+
+
+
+
+
+
+
+
+
+                            </script>
+
+
+
+
+                            <%if (HiddenFieldNavBarResposiveJSValidation2.Value == "true")%>
+                            <%{%>
+
+
+
+                            <ul class="contenedor_lista-2">
+
+
+
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_NoAdmin/Home.aspx" class="li_link">Home</a>
+                                </li>
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+
+                                <%{%>
+
+
+
+
+                                <li class="lista_li li_transform">
+
+                                    <a href="/Paginas_aspx_NoAdmin/DetalleProducto.aspx" class="li_link">Detalle del Producto</a>
+                                </li>
+
+
+                                <%}%>
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+
+                                <%{%>
+
+
+
+
+                                <li class="lista_li li_transform">
+
+                                    <a href="/Paginas_aspx_NoAdmin/ProductoFavorito.aspx" class="li_link">Productos Favoritos</a>
+                                </li>
+
+
+                                <%}%>
+
+                                <li class="lista_li li_transform">
+
+                                    <a href="/Paginas_aspx_Admin/TablaArticulos.aspx" class="li_link">Artículos</a>
+                                </li>
+
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Admin/AdministracionArticulos.aspx" class="li_link">Editar Artículo</a>
+                                </li>
+
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+                                <%{ %>
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/PerfilUsuario.aspx" class="li_link">Mi Perfil</a>
+                                </li>
+                                <%}%>
+
+
+
+
+                                <% if (validarPaginaLoginRegistroCuenta == false)%>
+                                <%{%>
+
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/Login.aspx" class="li_link">Ingresar</a>
+                                </li>
+                                <li class="lista_li li_transform">
+                                    <a href="/Paginas_aspx_Login/RegistroCuenta.aspx" class="li_link">Registrarse</a>
+                                </li>
+                                <%}%>
+
+
+
+                                <%if (Session["UsuarioLogin"] != null)%>
+
+                                <%{%>
+
+
+
+                                <li class="lista_li" style="background-color: transparent;">
+
+                                    <asp:Button ID="Button1" CssClass="lista_li" OnClick="btonCerrarSesion_Click" runat="server" Text="Cerrar Sesión" />
+
+                                </li>
+                                <%}%>
+
+
+
+                                <%if (validarIngresoPaginasNoAdministrador || validarIngresoPaginasAdministrador)%>
+                                <% { %>
+                                <li class="lista_li-image">
+                                    <asp:Image ID="Image1" Style="height: 50px; width: 50px; border-radius: 50%; margin-bottom: 0;" runat="server" ImageUrl="~/Imagenes/LoginDefault.png" />
+                                </li>
+
+
+
+                                <% } %>
+                            </ul>
+
+
+                            <%}%>
+
+
+                            <%}%>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+
+            </nav>
+
+        </header>
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+
+        <script src="/Contenido_JS/PaginaMaestra.js"></script>
+        <script src="/Contenido_JS/PerfilUsuario.js"></script>
+
+
+    </form>
+
+
+</body>
+</html>
+
+

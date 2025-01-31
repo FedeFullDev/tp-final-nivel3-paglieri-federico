@@ -1,0 +1,403 @@
+﻿html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #39b7ff;
+    margin: 0;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+/*Filtro de productos*/
+
+.contenedor_filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtro_filtro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.filtro_texto {
+    margin-top: 0.2rem;
+    width: 30rem;
+    outline: none;
+    border: 0.1rem solid #00FF87;
+    background-color: #00fff7;
+    height: 3.5rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+
+
+.filtro_campo {
+    width: 30rem;
+    border: 0.2rem solid black;
+    border-radius: 0 1rem 1rem 0;
+    height: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+}
+
+    .filtro_campo option {
+        color: #0078ff;
+     }
+
+
+.filtro_criterio {
+    width: 30rem;
+    border: 0.2rem solid black;
+    border-radius: 0 1rem 1rem 0;
+    height: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+}
+
+    .filtro_criterio option {
+        color: #0078ff;
+    }
+
+.filtro_busqueda {
+    width: 30rem;
+    border: 0.1rem solid gray;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    background-color: #00fff7;
+    margin-bottom: 1rem;
+    outline: none;
+    border: 0.1rem solid #00FF87;
+    height: 3.5rem;
+    font-size: 1.5rem;
+}
+
+
+.filtro_button {
+    font-weight: bold;
+    width: 20rem;
+    padding: 1rem;
+    background-color: #A6AFFF;
+    transition: color 0.5s ease-in, border-radius 0.5s linear;
+    border: 0.2rem solid #9B8EFF;
+    margin: auto;
+    
+}
+
+    .filtro_button:hover {
+        border-radius: 0 1.5rem 0 1.5rem;
+        color: white;
+    }
+
+
+/*Main*/
+
+    .catalogo {
+        background-color: #D2F9FC;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: auto;
+        padding: 2rem;
+        min-height: 40rem;
+    }
+
+    .catalogo_producto {
+        background-color: #1abdff;
+        display: flex;
+        width: calc(50% - 1rem);
+        height: 40rem;
+        box-shadow: 0 0 0.5rem #00FFFF;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+        .catalogo_producto:hover {
+            box-shadow: 0 0 2rem #00FFFF;
+        }
+
+
+
+
+
+.producto_informacion {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+}
+
+#spanIconProductoFavorito {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 60%;
+  height: 10%;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: auto
+}
+
+#ContentPlaceHolder1_repeaterProductosCatalogo_btonAgregarProductoFavorito_0{
+    border: none;
+    background: none;
+}
+
+.fa-star {
+    color: white;
+    visibility: hidden;
+    font-size: 2.8rem;
+    width: 10%;
+}
+
+.fa-trash {
+    color: #0055ff;
+    visibility: hidden;
+    font-size: 2.8rem;
+    width: 10%;
+}
+
+    .fa-star:hover {
+        color: yellow;
+        cursor: pointer;
+    }
+
+.informacion_info {
+    text-shadow: 0.2rem 0.5rem 1.7rem #006df7;
+}
+
+
+.contenedor_efecto_aura {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.informacion_button {
+    position: relative;
+    border: 0.2rem solid #45B6FF;
+    background-image: linear-gradient(to right, #3CB2FF, #6EFCB7 );
+    font-weight: bold;
+    transition: color 0.5s linear;
+    margin: auto;
+   width: 100%;
+    height: 100%;
+}
+
+    .informacion_button:hover {
+        color: white;
+    }
+
+.contenedor_efecto_aura::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 0.2rem solid #45B6FF;
+    padding: 0.2rem;
+    background-color: #7EFFF5;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 0.5s linear, transform 0.5s linear, background-color 0.5s linear;
+}
+
+.contenedor_efecto_aura:hover::before {
+    z-index: auto;
+    opacity: 0;
+    transform: scale(1.4);
+    background-color: #7EFFF5;
+}
+
+.producto_imagen {
+    background-color: white;
+    width: 40%;
+    min-height: 100%;
+    border-radius: 0 1rem 1rem 0;
+    overflow: hidden;
+}
+
+.imagen_img {
+    
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+   
+    
+}
+
+
+@media (min-width: 240px) and ( max-width: 750px){
+
+
+    .contenedor_filtro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+    }
+
+    .filtro_filtro {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .filtro_texto {
+        margin-top: 0.2rem;
+        width: 24rem;
+        outline: none;
+        border: 0.1rem solid #00FF87;
+        background-color: #00fff7;
+        height: 3.5rem;
+        border-radius: 0.4rem;
+        font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+
+
+
+    .filtro_campo {
+        width: 24rem;
+        margin: auto;
+        border: 0.2rem solid black;
+        border-radius: 0 1rem 1rem 0;
+        height: 4rem;
+        background-image: linear-gradient(to left, #00fff7, #54a4ff);
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .filtro_criterio {
+        width: 24rem;
+        margin: auto;
+        border: 0.2rem solid black;
+        border-radius: 0 1rem 1rem 0;
+        height: 4rem;
+        background-image: linear-gradient(to left, #00fff7, #54a4ff);
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .filtro_busqueda {
+        width: 24rem;
+        border: 0.1rem solid gray;
+        border-radius: 0.4rem;
+        font-weight: bold;
+        background-color: #00fff7;
+        outline: none;
+        border: 0.1rem solid #00FF87;
+        height: 3.5rem;
+        margin: auto auto 1rem auto;
+        font-size: 1.5rem;
+    }
+
+
+    .filtro_button {
+        font-weight: bold;
+        width: 20rem;
+        padding: 1rem;
+        background-color: #A6AFFF;
+        transition: color 0.5s ease-in, border-radius 0.5s linear;
+        border: 0.2rem solid #9B8EFF;
+        margin: auto;
+    }
+
+
+        .catalogo {
+        background-color: #D2F9FC;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-items: center;
+        padding: 2rem;
+        
+    }
+
+    .catalogo_producto {
+        background-color: #1abdff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 55rem;
+        box-shadow: 0 0 0.5rem #00FFFF;
+        border-radius: 1rem;
+       overflow: hidden;
+       gap: 2rem;
+    }
+
+    .producto_informacion {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #spanIconProductoFavorito {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        position: relative;
+            
+    }
+
+    .contenedor_efecto_aura {
+        display: block;
+        position: relative;
+        width: 70%;
+        margin: auto;
+    }
+
+    .informacion_button{
+       width: 100%;
+       margin: auto;
+    }
+
+        .catalogo_producto:hover {
+            box-shadow: 0 0 2rem #00FFFF;
+        }
+    .updatePanelVerDetalle{
+        width: 100%;
+    }
+
+    .producto_imagen {
+        background-color: white;
+        width: 100%;
+        height: 50%;
+        border-radius: 0 0 1rem 1rem;
+        overflow: hidden;
+        
+    }
+
+    .imagen_img {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: contain;
+    }
+}

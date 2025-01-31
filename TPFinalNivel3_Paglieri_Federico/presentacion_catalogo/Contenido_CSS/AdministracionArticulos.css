@@ -1,0 +1,223 @@
+﻿html {
+    font-size: 10px;
+}
+
+
+body {
+    background-color: #39b7ff;
+   overflow:scroll;
+}
+
+
+
+
+.contenedor_formulario {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 87.4vh;
+}
+
+.formulario_datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+    width: 50%;
+    position: relative;
+    margin-top: 12rem;
+}
+
+
+
+.datos_input {
+    background-color: #00fff7;
+    border: 0.1rem outset #00fff7;
+    border-radius: 1rem 1rem 1rem 0;
+    outline: none;
+    margin: auto auto 2rem auto;
+    width: 80%;
+    padding: 0.4rem;
+}
+
+    .datos_input:focus {
+        box-shadow: 0 0 2rem #00CED1;
+    }
+
+    .datos_input:hover {
+        background-color: #E0FFFF;
+    }
+
+    .datos_input::placeholder{
+        color: dodgerblue;
+    }
+
+.input_MultiLine{
+resize:vertical;
+min-height: 4rem;
+max-height: 10rem;
+}
+
+.datos_option {
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+    margin: auto auto 2rem auto;
+    border-radius: 0 0 2rem 2rem;
+    border: 0.1rem solid #0078ff;
+    width: 80%;
+    height: 4rem;
+}
+
+    .datos_option option {
+        color: #0078ff;
+    }
+
+
+#ContentPlaceHolder1_PanelButtonsAgregarEliminar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#ContentPlaceHolder1_btonAgregar {
+    margin: auto;
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+    border: 0.1rem solid #E0FFFF;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    width: 34rem;
+    transition: border-color 0.5s linear;
+}
+
+    #ContentPlaceHolder1_btonAgregar:hover {
+        border-color: #2bfff9;
+        font-weight: 800;
+    }
+
+
+
+.formulario_image {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 50%;
+  
+}
+
+.image_articuloImg {
+    width: 100%;
+    height: 100%;
+  
+}
+
+#ContentPlaceHolder1_btonEliminar {
+    display: inline-block;
+    background-image: linear-gradient(to left, #00fff7, #54a4ff);
+    border: 0.1rem solid #E0FFFF;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    width: 34rem;
+    margin: auto;
+   transition: border-color 0.5s linear;
+}
+
+    #ContentPlaceHolder1_btonEliminar:hover {
+        border-color: #2bfff9;
+        font-weight: 800;
+    }
+
+
+.maxCaracteres {
+    text-align: center;
+    color: #003aff;
+    text-shadow: 0 0 2em;
+    font-size: 1.5rem;
+}
+
+
+#ContentPlaceHolder1_updatePanelDetalleArticulos{
+ margin-top: 2rem;
+}
+.contenedor_lbl_fuera_de_rango_precio{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.lbl_fuera_de_rango_precio {
+   
+    font-size: 1.5rem;
+}
+
+
+@media (min-width: 240px) and (max-width: 750px) {
+    .contenedor_formulario {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+       height: 75rem;
+        gap: 12rem;
+    }
+
+    .formulario_datos {
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        gap: 2rem;
+        width: 100%;
+        position: relative;
+      height: 54rem;
+        margin-top: 35rem;
+        margin-bottom: auto;
+    }
+
+    .formulario_image {
+       
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 20rem;
+        max-height: 20rem;
+      overflow: hidden;
+    }
+
+    .image_articuloImg {
+        width: 100%;
+       height: 100%;
+    }
+
+
+
+    #ContentPlaceHolder1_btonAgregar {
+        margin: auto;
+        background-image: linear-gradient(to left, #00fff7, #54a4ff);
+        border: 0.1rem solid #E0FFFF;
+        border-radius: 0.4rem;
+        padding: 0.5rem;
+        width: 23rem;
+        transition: border-color 0.5s linear;
+    }
+
+    #ContentPlaceHolder1_btonEliminar {
+        background-image: linear-gradient(to left, #00fff7, #54a4ff);
+        border: 0.1rem solid #E0FFFF;
+        border-radius: 0.4rem;
+        padding: 0.5rem;
+        width: 23rem;
+        margin: auto;
+        transition: border-color 0.5s linear;
+    }
+
+}

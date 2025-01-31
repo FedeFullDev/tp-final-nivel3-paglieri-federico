@@ -1,0 +1,431 @@
+﻿
+html {
+}
+
+body {
+    background-color: #b0fff7;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 2rem;
+    background-image: linear-gradient(to right, #0087ac, #009bff);
+    height: 86vh;
+    width: 100%;
+}
+
+#registro_usuario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+    
+}
+
+.usuario_contenedor_textBox {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    
+}
+
+.contraseña_contenedor_textBox {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+}
+
+.usuario_contenedor_span {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.contraseña_contenedor_span {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+#registro_contraseña {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-end;
+    width: 70%;
+    margin-left: 0;
+    margin-right: auto;
+   
+}
+
+#registro_contraseña-login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+.contraseña_contenedor_textBox-Registro{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+.login_info {
+    background-image: linear-gradient(to right, #46a5ff, #7fe4ff, #00ecff);
+    border: 0.2rem solid #8afff1;
+    border-radius: 0.2rem;
+    outline: none;
+    color: black;
+    font-weight: bolder;
+    min-height: 3.5rem;
+    max-height: 8rem;
+    width: 50%;
+    max-width: 50%;
+    box-shadow: 0px 0px 8px #2eecff;
+    
+}
+
+    .login_info::placeholder {
+        color: white;
+    }
+
+.info_email {
+    resize: vertical;
+    
+}
+
+.contenedor_bton_registrarse {
+    width: 70%;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+
+.login_acceder {
+    font-weight: bold;
+    background-image: linear-gradient(to right, #1ea8db, #67fdff);
+    border: 0.2rem ridge #0affe5;
+    border-radius: 0.2rem;
+    color: white;
+    padding: 0.5rem;
+    width: 50%;
+    transition: color linear 0.5s, border-radius linear 0.5s;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+    .login_acceder:hover {
+        background-image: linear-gradient(to right, #70d1ff, #1ea8db);
+        color: black;
+        border-color: #003eff;
+        border-radius: 0.4rem;
+        font-weight: 900;
+    }
+
+
+.contenedor_contenedor_label_login_cuentaInexistente_crear_cuenta {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.contenedor_label_login_cuentaInexistente_crear_cuenta{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ContentPlaceHolder1_linkRegistro {
+    cursor: default;
+    color: #84f6ff;
+    transition: color linear 0.4s;
+    margin-left: 5%;
+    font-size: 1.5rem;
+}
+
+    #ContentPlaceHolder1_linkRegistro:hover {
+        text-decoration: underline;
+    }
+
+
+
+.login_registro {
+    margin-left: 5%;
+    cursor: default;
+    color: #84f6ff;
+    border: 0.2rem solid transparent;
+    padding: 0.5rem;
+    transition: background-color 0.5s linear, border 0.5s ease-in, border-radius 0.5s linear;
+}
+
+    .login_registro:hover {
+        color: black;
+        background-color: #00ffaa;
+        border-radius: 1rem 0 1rem 0;
+        border: 0.2rem solid #007cff;
+    }
+
+
+/*Las dos clases siguientes de labels son para los label de validación de la página RegistroCuenta, donde sus clases son creadas con js a causa 
+    de una validación del codebehind.
+*/
+.label--usuario-creado {
+    
+    color: orangered;
+   font-size: 1.5rem;
+}
+
+
+.label--contraseña-creada{
+    color: orangered;
+    font-size: 1.5rem;
+}
+
+#usuario_contenedor_label_error {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#contraseña_contenedor_label_error {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    align-items: center;
+}
+
+
+
+
+.fa-circle-exclamation {
+    color: #ff1b1b;
+}
+
+
+@media (min-width: 240px) and (max-width: 750px) {
+    #registro_usuario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 2.5rem;
+    }
+
+    .usuario_contenedor_textBox {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #ContentPlaceHolder1_revEmail{
+        margin: auto;
+        font-size: 1.2rem;
+    }
+     .contraseña_contenedor_textBox {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .contraseña_contenedor_textBox-Registro {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    .usuario_contenedor_span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #registro_contraseña-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 2.5rem;
+    }
+
+
+    .contraseña_contenedor_span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #registro_contraseña {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: flex-end;
+        width: 100%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .login_info {
+        background-image: linear-gradient(to right, #46a5ff, #7fe4ff, #00ecff);
+        border: 0.2rem solid #8afff1;
+        border-radius: 0.2rem;
+        outline: none;
+        color: black;
+        font-weight: bolder;
+        height: 3.5rem;
+        width: 100%;
+        box-shadow: 0px 0px 8px #2eecff;
+        font-size: 1.5rem;
+        margin: auto;
+    }
+
+
+    .label--usuario-creado {
+        color: orangered;
+        font-size: 1.2rem;
+    }
+
+
+    .label--contraseña-creada {
+        color: orangered;
+        font-size: 1.2rem;
+    }
+
+    .contenedor_bton_registrarse {
+        width: 100%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .login_acceder {
+        font-weight: bold;
+        background-image: linear-gradient(to right, #1ea8db, #67fdff);
+        border: 0.2rem ridge #0affe5;
+        border-radius: 0.2rem;
+        color: white;
+        padding: 0.5rem;
+        width: 80%;
+        transition: color linear 0.5s, border-radius linear 0.5s;
+      margin: auto;
+      font-size: 1.5rem;
+    }
+
+    .contenedor_contenedor_label_login_cuentaInexistente_crear_cuenta {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .contenedor_label_login_cuentaInexistente_crear_cuenta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ContentPlaceHolder1_linkRegistro {
+        cursor: default;
+        color: #84f6ff;
+        transition: color linear 0.4s;
+        font-size: 1.2rem;
+
+    }
+
+    
+}
+
+@media (min-width: 240px) and (max-width: 370px){
+    .login_info {
+        background-image: linear-gradient(to right, #46a5ff, #7fe4ff, #00ecff);
+        border: 0.2rem solid #8afff1;
+        border-radius: 0.2rem;
+        outline: none;
+        color: black;
+        font-weight: bolder;
+        height: 3.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0px 0px 8px #2eecff;
+        font-size: 1.5rem;
+        margin: auto;
+    }
+}
+
+@media (min-width: 371px) and (max-width: 580px){
+    .login_info {
+        background-image: linear-gradient(to right, #46a5ff, #7fe4ff, #00ecff);
+        border: 0.2rem solid #8afff1;
+        border-radius: 0.2rem;
+        outline: none;
+        color: black;
+        font-weight: bolder;
+        height: 3.5rem;
+        width: 100%;
+        max-width: 70%;
+        box-shadow: 0px 0px 8px #2eecff;
+        font-size: 1.5rem;
+        margin: auto;
+    }
+
+    .login_acceder {
+        font-weight: bold;
+        background-image: linear-gradient(to right, #1ea8db, #67fdff);
+        border: 0.2rem ridge #0affe5;
+        border-radius: 0.2rem;
+        color: white;
+        padding: 0.5rem;
+        width: 50%;
+        transition: color linear 0.5s, border-radius linear 0.5s;
+        margin: auto;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 581px) and (max-width: 750px) {
+    .login_info {
+        background-image: linear-gradient(to right, #46a5ff, #7fe4ff, #00ecff);
+        border: 0.2rem solid #8afff1;
+        border-radius: 0.2rem;
+        outline: none;
+        color: black;
+        font-weight: bolder;
+        height: 3.5rem;
+        width: 100%;
+        max-width: 70%;
+        box-shadow: 0px 0px 8px #2eecff;
+        font-size: 1.5rem;
+        margin: auto;
+    }
+
+    .login_acceder {
+        font-weight: bold;
+        background-image: linear-gradient(to right, #1ea8db, #67fdff);
+        border: 0.2rem ridge #0affe5;
+        border-radius: 0.2rem;
+        color: white;
+        padding: 0.5rem;
+        width: 50%;
+        transition: color linear 0.5s, border-radius linear 0.5s;
+        margin: auto;
+        font-size: 1.5rem;
+    }
+}

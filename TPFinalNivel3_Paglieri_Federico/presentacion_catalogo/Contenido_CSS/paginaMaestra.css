@@ -1,0 +1,171 @@
+﻿html {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 2rem;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to bottom,#bda6ff, #a6fff4 );
+    border: none;
+    border-left: none;
+    border-right: none;
+    height: 8rem;
+    position: relative;
+}
+
+
+
+    .header:hover::before {
+        z-index: 1;
+        opacity: 1;
+    }
+
+
+
+.contenedor_lista {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    z-index: 2;
+    top: 2rem;
+   
+}
+
+
+
+
+.lista_li {
+    color: white;
+    transition: color 1s linear, transform 0.2s linear;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+   
+    text-align: left;
+}
+
+    .lista_li:hover {
+        color: #0061FF;
+        cursor: default;
+    }
+
+
+.li_transform:hover {
+    transform: translate(0.5rem);
+}
+
+
+
+
+
+
+
+
+#btonCerrarSesion {
+    font-weight: 800;
+    color: black;
+    transition: color 0.2s linear;
+    
+   
+}
+
+
+    #btonCerrarSesion:hover {
+        color: #0061FF;
+    }
+
+
+
+/*La siguiente clase es generada con js. Es utilizada para marcar el elemento li del navBar que está siendo utilizado. Es decir, la página actual*/
+.li_pagina_actual {
+    color: #0061FF;
+    text-decoration: underline;
+    text-decoration-color: #82ceff;
+}
+
+
+@media (min-width: 240px) and ( max-width: 750px) {
+    body {
+        font-family: 'Roboto';
+        font-size: 2rem;
+        /* overflow: scroll;*/
+    }
+
+    .header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+        background-image: linear-gradient(to bottom,#bda6ff, #a6fff4 );
+        border: none;
+        border-left: none;
+        border-right: none;
+        height: auto;
+        min-height: 8rem;
+        max-height: 8rem;
+        overflow: hidden;
+        transition: max-height 1s linear;
+    }
+
+
+        .header.expanded {
+            max-height: 50rem;
+        }
+
+    .lista_li {
+        color: white;
+        transition: color 1s linear, transform 0.2s linear;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        text-align: left;
+        width: 20rem;
+    }
+
+    .li_link {
+        width: 20rem;
+    }
+
+    /*
+        .header:hover::before {
+            z-index: 1;
+            opacity: 1;
+        }
+*/
+
+    .contenedor_lista-2 {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        top: 2rem;
+        height: auto;
+    }
+
+
+
+    .fa-bars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        color: dodgerblue;
+        font-size: 2.9rem;
+    }
+
+
+    .lista_li-image {
+        width: 20rem;
+    }
+}

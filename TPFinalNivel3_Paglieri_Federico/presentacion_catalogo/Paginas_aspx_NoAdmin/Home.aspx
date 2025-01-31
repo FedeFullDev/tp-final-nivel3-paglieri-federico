@@ -181,9 +181,9 @@
                                         Visible='<%# Session["listArticulosFavoritosId"] != null && (((List<int>)Session["listArticulosFavoritosId"]).Contains(Convert.ToInt32(Eval("Id")))) %>'>
                                     </asp:LinkButton>
 
-                                    <span id="iconProductoFavoritoDescripcionFuncionalidad" style="display: none; width: 90%">Producto Favorito</span>
+                                    <span id="iconProductoFavoritoDescripcionFuncionalidad" style="display: none; width: 90%"  >Producto Favorito</span>
 
-                                    <span id="iconProductoEliminadoDescripcionFuncionalidad" style="display: none; width: 90%">Quitar Favorito</span>
+                                    <span id="iconProductoEliminadoDescripcionFuncionalidad" style="display: none; width: 90%"  >Quitar Favorito</span>
 
                                 </span>
 

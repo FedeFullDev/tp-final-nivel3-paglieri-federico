@@ -176,6 +176,17 @@ body {
         cursor: pointer;
     }
 
+
+/*#iconProductoFavoritoDescripcionFuncionalidad {
+    display: none;
+    width: 90%;
+}
+
+#iconProductoEliminadoDescripcionFuncionalidad {
+    display: none;
+    width: 90%;
+}*/
+
 .informacion_info {
     text-shadow: 0.2rem 0.5rem 1.7rem #006df7;
 }
@@ -365,6 +376,25 @@ body {
         position: relative;
             
     }
+
+    #iconProductoFavoritoDescripcionFuncionalidad{
+        display: inline;
+    }
+
+    #iconProductoEliminadoDescripcionFuncionalidad{
+        display: inline;
+    }
+
+    .fa-star {
+        visibility: visible;
+    }
+
+    .fa-trash {
+       
+        visibility: visible;
+        
+    }
+
 
     .contenedor_efecto_aura {
         display: block;

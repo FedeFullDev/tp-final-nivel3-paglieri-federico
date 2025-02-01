@@ -112,7 +112,7 @@
                     usuarioContenedorLabelError.style.opacity = "0";
                     contraseñaContenedorLabelError.style.opacity = "0";
 
-                }, 1200)
+                }, 1800)
 
             }
 

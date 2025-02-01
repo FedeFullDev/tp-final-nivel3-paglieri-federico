@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--  <asp:ScriptManager ID="scriptManageUpdatePanelDetalleArrticulo" runat="server"></asp:ScriptManager>--%>
+    
 
 
 
@@ -29,76 +29,59 @@
 
                     <asp:TextBox ID="tBoxId" CssClass="datos_input" ReadOnly="true" placeholder="id" AutoPostBack="false" runat="server"></asp:TextBox>
                     <article class="contenedor_dato">
-                        <asp:TextBox ID="tBoxNombre" CssClass="datos_input" placeholder="Nombre" AutoPostBack="true" MaxLength="50" OnTextChanged="tBoxNombre_TextChanged" runat="server"></asp:TextBox>
 
-                        <%if (Session["validarMaxCaracteresNombre"] != null)%>
-                        <% {%>
-                        <%if ((bool)Session["validarMaxCaracteresNombre"] && tBoxNombre.Text != string.Empty) %>
-                        <%{%>
-                        <label for="<%= tBoxNombre.ClientID %>" class="maxCaracteres">Máxima cantidad de caracteres</label>
-                        <%} %>
-                        <%}
+                        <label id="lblMaxCaracteresNombre" for="tBoxNombre" class="maxCaracteres">Máxima cantidad de caracteres</label>
+                        <asp:TextBox ID="tBoxNombre" CssClass="datos_input" placeholder="Nombre" ClientIDMode="Static"  MaxLength="50"  runat="server"></asp:TextBox>
 
-                        %>
+                        
+                        
                     </article>
 
 
                     <article class="contenedor_dato">
-                        <asp:TextBox ID="tBoxCodigoArticulo" CssClass="datos_input" placeholder="Codigo del Artículo" AutoPostBack="true" MaxLength="50" OnTextChanged="tBoxCodigoArticulo_TextChanged" runat="server"></asp:TextBox>
-                        <%if (Session["validarMaxCaracteresCodigoArticulo"] != null)%>
-                        <%{%>
-                        <%if ((bool)Session["validarMaxCaracteresCodigoArticulo"] && tBoxCodigoArticulo.Text != string.Empty) %>
-                        <%{%>
-                        <label for="<%= tBoxCodigoArticulo.ClientID %>" class="maxCaracteres">Máxima cantidad de caracteres</label>
-                        <%} %>
-                        <%}
 
-                        %>
+                        <label id="lblMaxCaracteresCodigoArticulo" for="tBoxCodigoArticulo" class="maxCaracteres">Máxima cantidad de caracteres</label>
+                        <asp:TextBox ID="tBoxCodigoArticulo" CssClass="datos_input" ClientIDMode="Static" placeholder="Codigo del Artículo"  MaxLength="50"  runat="server"></asp:TextBox>
+                        
+                        
+                       
                     </article>
 
 
                     <article class="contenedor_dato">
-                        <asp:TextBox ID="tBoxDescripcion" CssClass="datos_input input_MultiLine" placeholder="Descripción" AutoPostBack="true" MaxLength="150" TextMode="MultiLine" OnTextChanged="tBoxDescripcion_TextChanged" runat="server"></asp:TextBox>
 
-                        <%if (Session["validarMaxCaracteresDescripcion"] != null)%>
-                        <%{%>
-                        <%if ((bool)Session["validarMaxCaracteresDescripcion"] && tBoxDescripcion.Text != string.Empty) %>
-                        <%{%>
-                        <label for="<%= tBoxDescripcion.ClientID %>" class="maxCaracteres">Máxima cantidad de caracteres</label>
-                        <%}
-                        %>
-                        <%}
+                        <label id="lblMaxCaracteresDescripcion" for="tBoxDescripcion" class="maxCaracteres">Máxima cantidad de caracteres</label>
+                        <asp:TextBox ID="tBoxDescripcion" CssClass="datos_input input_MultiLine" ClientIDMode="Static" placeholder="Descripción"  MaxLength="150" TextMode="MultiLine"  runat="server"></asp:TextBox>
 
-                        %>
+                        
+                        
+                        
                     </article>
 
                     <asp:DropDownList ID="dDownListMarca" CssClass="datos_option" AutoPostBack="true" runat="server"></asp:DropDownList>
                     <asp:DropDownList ID="dDownListCategoria" CssClass="datos_option" AutoPostBack="true" runat="server"></asp:DropDownList>
 
                     <article class="contenedor_dato">
-                        <asp:TextBox ID="tBoxPrecio" CssClass="datos_input" placeholder="Precio" AutoPostBack="true" OnTextChanged="tBoxPrecio_TextChanged" MaxLength="20" runat="server"></asp:TextBox>
+
+                        <label id="lblMaxCaracteresPrecio" for="tBoxPrecio" class="maxCaracteres">Máxima cantidad de caracteres</label>
+                        <asp:TextBox ID="tBoxPrecio" CssClass="datos_input" ClientIDMode="Static" placeholder="Precio"   MaxLength="20"  runat="server"></asp:TextBox>
 
                         <span class="contenedor_lbl_fuera_de_rango_precio">
-                            <asp:Label  ID="lblError" CssClass="lbl_fuera_de_rango_precio" ForeColor="Red" Visible="False" runat="server"></asp:Label>
+                            <asp:Label  ID="lblErrorPrecio" CssClass="lbl_fuera_de_rango_precio" ClientIDMode="Static" ForeColor="Red"  runat="server"></asp:Label>
                         </span>
 
 
-                        <%if (Session["validarMaxCaracteresPrecio"] != null)%>
-                        <%{%>
-                        <%if ((bool)Session["validarMaxCaracteresPrecio"] && tBoxPrecio.Text != string.Empty)%>
-                        <%{%>
-                        <label for="<%= tBoxPrecio.ClientID %>" class="maxCaracteres">Máxima cantidad de caracteres</label>
-                        <%} %>
-                        <% }%>
+                       
+                        
+                        
                     </article>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
 
-            <%--<asp:UpdatePanel runat="server">
-                <ContentTemplate>--%>
+          
 
-                    <asp:Panel ID="PanelButtonsAgregarEliminar" runat="server">
+                    <asp:Panel ID="PanelButtonsAgregarEliminar" ClientIDMode="Static" runat="server">
                         <%if (Session["validarTipoUsuarioAdmin"] != null)%>
                         <%{%>
                         <%if ((bool)Session["validarTipoUsuarioAdmin"])%>
@@ -116,8 +99,7 @@
                         <%}%>
                         <%}%>
                     </asp:Panel>
-            <%--    </ContentTemplate>
-            </asp:UpdatePanel>--%>
+           
 
 
 
@@ -173,4 +155,7 @@
 
     <%} %>
     <%}%>
+
+    <script src="../Contenido_JS/AdministracionArticulos.js"></script>
+
 </asp:Content>

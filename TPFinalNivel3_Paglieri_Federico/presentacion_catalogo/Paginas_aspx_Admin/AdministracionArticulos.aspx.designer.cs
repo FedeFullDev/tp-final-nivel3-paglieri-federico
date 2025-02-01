@@ -87,13 +87,13 @@ namespace presentacion_catalogo.Paginas_aspx_Admin
         protected global::System.Web.UI.WebControls.TextBox tBoxPrecio;
 
         /// <summary>
-        /// Control lblError.
+        /// Control lblErrorPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblErrorPrecio;
 
         /// <summary>
         /// Control PanelButtonsAgregarEliminar.

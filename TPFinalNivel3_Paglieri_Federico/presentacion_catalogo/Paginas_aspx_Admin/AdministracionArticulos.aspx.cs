@@ -140,34 +140,7 @@ namespace presentacion_catalogo.Paginas_aspx_Admin
                     }
 
                 }
-                else if (IsPostBack)
-                {
-
-
-                    //validación para el maxLenght de los iput de Nombre, Código de Artículo y Descripción
-
-                    if (Session["validarMaxCaracteresCodigoArticulo"] != null)
-                    {
-                        Session["validarMaxCaracteresCodigoArticulo"] = Session["validarMaxCaracteresCodigoArticulo"];
-                    }
-
-                    if (Session["validarMaxCaracteresNombre"] != null)
-                    {
-                        Session["validarMaxCaracteresNombre"] = Session["validarMaxCaracteresNombre"];
-                    }
-
-                    if (Session["validarMaxCaracteresDescripcion"] != null)
-                    {
-                        Session["validarMaxCaracteresDescripcion"] = Session["validarMaxCaracteresDescripcion"];
-                    }
-
-                    if (Session["validarMaxCaracteresPrecio"] != null)
-                    {
-                        Session["validarMaxCaracteresPrecio"] = Session["validarMaxCaracteresPrecio"];
-                    }
-
-
-                }
+                
             }
             catch (Exception ex)
             {
@@ -216,7 +189,20 @@ namespace presentacion_catalogo.Paginas_aspx_Admin
 
                 if (!string.IsNullOrEmpty(tBoxPrecio.Text))
                 {
-                    Articulo.Precio = decimal.Parse(tBoxPrecio.Text);
+                    decimal precio = 0;
+
+
+                    if (decimal.TryParse(tBoxPrecio.Text, out precio))
+                    {
+                        Articulo.Precio = precio;
+                    }
+                    else
+                    {
+                        Articulo.Precio = 0;
+                    }
+
+                  
+
                 }
                 else
                 {
@@ -299,209 +285,7 @@ namespace presentacion_catalogo.Paginas_aspx_Admin
             }
         }
 
-        
-        protected void tBoxCodigoArticulo_TextChanged(object sender, EventArgs e)
-        {
-            if (tBoxCodigoArticulo.Text.Length == 50)
-            {
-
-                if (Session["validarMaxCaracteresCodigoArticulo"] == null)
-                {
-                    Session.Add("validarMaxCaracteresCodigoArticulo", true);
-                    validarMaxCaracteresCodigoArticulo = (bool)Session["validarMaxCaracteresCodigoArticulo"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresCodigoArticulo"] = true;
-                    validarMaxCaracteresCodigoArticulo = (bool)Session["validarMaxCaracteresCodigoArticulo"];
-                }
-            }
-            else
-            {
-                if (Session["validarMaxCaracteresCodigoArticulo"] == null)
-                {
-                    Session.Add("validarMaxCaracteresCodigoArticulo", false);
-                    validarMaxCaracteresCodigoArticulo = (bool)Session["validarMaxCaracteresCodigoArticulo"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresCodigoArticulo"] = false;
-
-                    validarMaxCaracteresCodigoArticulo = (bool)Session["validarMaxCaracteresCodigoArticulo"];
-                }
-
-
-
-            }
-
-        }
-
-        protected void tBoxNombre_TextChanged(object sender, EventArgs e)
-        {
-            if (tBoxNombre.Text.Length == 50)
-            {
-
-                if (Session["validarMaxCaracteresNombre"] == null)
-                {
-                    Session.Add("validarMaxCaracteresNombre", true);
-                    validarMaxCaracteresNombre = (bool)Session["validarMaxCaracteresNombre"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresNombre"] = true;
-                    validarMaxCaracteresNombre = (bool)Session["validarMaxCaracteresNombre"];
-                }
-            }
-            else
-            {
-                if (Session["validarMaxCaracteresNombre"] == null)
-                {
-                    Session.Add("validarMaxCaracteresNombre", false);
-                    validarMaxCaracteresNombre = (bool)Session["validarMaxCaracteresNombre"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresNombre"] = false;
-
-                    validarMaxCaracteresNombre = (bool)Session["validarMaxCaracteresNombre"];
-                }
-
-
-
-            }
-
-        }
-
-        protected void tBoxDescripcion_TextChanged(object sender, EventArgs e)
-        {
-            if (tBoxDescripcion.Text.Length == 150)
-            {
-
-                if (Session["validarMaxiCaracteresDescripcion"] == null)
-                {
-                    Session.Add("validarMaxCaracteresDescripcion", true);
-                    validarMaxCaracteresDescripcion = (bool)Session["validarMaxCaracteresDescripcion"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresDescripcion"] = true;
-                    validarMaxCaracteresDescripcion = (bool)Session["validarMaxCaracteresDescripcion"];
-                }
-            }
-            else
-            {
-                if (Session["validarMaxCaracteresDescripcion"] == null)
-                {
-                    Session.Add("validarMaxCaracteresDescripcion", false);
-                    validarMaxCaracteresDescripcion = (bool)Session["validarMaxCaracteresDescripcion"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresDescripcion"] = false;
-
-                    validarMaxCaracteresDescripcion = (bool)Session["validarMaxCaracteresDescripcion"];
-                }
-
-
-
-            }
-
-        }
-
-        protected void tBoxPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-            decimal minMoney = -922337203685477.5808M;
-            decimal maxMoney = 922337203685477.5807M;
-            string input = tBoxPrecio.Text;
-
-            if (decimal.TryParse(input, out decimal value))
-            {
-                if (value < minMoney || value > maxMoney)
-                {
-                    // Manejo del error: Número fuera del rango
-                    lblError.Text = "El número está fuera del rango permitido para un tipo MONEY.";
-                    lblError.Visible = true;
-                    PanelButtonsAgregarEliminar.Visible = false;
-
-                    if (Session["EstadoLabelError"] == null)
-                    {
-                        Session.Add("EstadoLabelError", lblError.Visible);
-                    }
-                    else
-                    {
-                        Session["EstadoLabelError"] = lblError.Visible;
-                    }
-                }
-                else
-                {
-                    // Valor válido
-                    lblError.Visible = false;
-                    PanelButtonsAgregarEliminar.Visible = true;
-
-                    if (Session["EstadoLabelError"] == null)
-                    {
-                        Session.Add("EstadoLabelError", lblError.Visible);
-                    }
-                    else
-                    {
-                        Session["EstadoLabelError"] = lblError.Visible;
-                    }
-                }
-            }
-            else
-            {
-                // Manejo del error: Formato inválido
-                lblError.Text = "Por favor ingrese un número válido.";
-                lblError.Visible = true;
-
-                PanelButtonsAgregarEliminar.Visible = false;
-
-                if (Session["EstadoLabelError"] == null)
-                {
-                    Session.Add("EstadoLabelError", lblError.Visible);
-                }
-                else
-                {
-                    Session["EstadoLabelError"] = lblError.Visible;
-                }
-            }
-
-
-
-            if (tBoxPrecio.Text.Length == 20)
-            {
-
-                if (Session["validarMaxCaracteresPrecio"] == null)
-                {
-                    Session.Add("validarMaxCaracteresPrecio", true);
-                    validarMaxCaracteresPrecio = (bool)Session["validarMaxCaracteresPrecio"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresPrecio"] = true;
-                    validarMaxCaracteresPrecio = (bool)Session["validarMaxCaracteresPrecio"];
-                }
-            }
-            else
-            {
-                if (Session["validarMaxCaracteresPrecio"] == null)
-                {
-                    Session.Add("validarMaxCaracteresPrecio", false);
-                    validarMaxCaracteresPrecio = (bool)Session["validarMaxCaracteresPrecio"];
-                }
-                else
-                {
-                    Session["validarMaxCaracteresPrecio"] = false;
-
-                    validarMaxCaracteresPrecio = (bool)Session["validarMaxCaracteresPrecio"];
-                }
-
-
-
-            }
-        }
-
+ 
 
 
     }

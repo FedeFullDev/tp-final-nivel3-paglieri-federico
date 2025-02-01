@@ -74,7 +74,7 @@ max-height: 10rem;
     }
 
 
-#ContentPlaceHolder1_PanelButtonsAgregarEliminar{
+#PanelButtonsAgregarEliminar{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -155,6 +155,21 @@ max-height: 10rem;
     font-size: 1.5rem;
 }
 
+#lblMaxCaracteresNombre{
+    visibility: hidden;
+}
+
+#lblMaxCaracteresCodigoArticulo{
+    visibility: hidden;
+}
+
+#lblMaxCaracteresDescripcion{
+    visibility: hidden;
+}
+
+#lblMaxCaracteresPrecio{
+    visibility: hidden;
+}
 
 @media (min-width: 240px) and (max-width: 750px) {
     .contenedor_formulario {

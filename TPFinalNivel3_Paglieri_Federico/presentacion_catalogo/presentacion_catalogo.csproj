@@ -70,6 +70,7 @@
     <Content Include="Contenido_CSS\PerfilUsuario.css" />
     <Content Include="Contenido_CSS\ProductoFavorito.css" />
     <Content Include="Contenido_CSS\TablaArticulos.css" />
+    <Content Include="Contenido_JS\AdministracionArticulos.js" />
     <Content Include="Contenido_JS\Home.js" />
     <Content Include="Contenido_JS\PaginaMaestra.js" />
     <Content Include="Contenido_JS\PerfilUsuario.js" />

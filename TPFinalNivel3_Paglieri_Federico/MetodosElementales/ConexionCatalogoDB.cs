@@ -74,9 +74,11 @@ namespace MetodosElementales
         {
             try
             {
-               
 
-               
+                string connectionString = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+
+                conexion = new SqlConnection(connectionString);
+
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

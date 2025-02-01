@@ -30,9 +30,10 @@ Si no deseas crear un nuevo usuario, puedes utilizar el siguiente usuario por de
 
 Este usuario **no tiene permisos de administrador**, al igual que todos los usuarios que se crean. Sin embargo, las funcionalidades de administrador son visibles para todos los usuarios, pero están **deshabilitadas** para los que no tienen permisos de administración.
 
-### Usuario con permisos de administración de artículos
+### Usuario con permisos de administración
 - **Usuario**: `admin@gmail.com` 
 - **Contraseña**: `admin`
 
 ### Notas
+- Los permisos de administración se refieren únicamente a la administración de artículos y no a la edición o visibilidad de los datos de todos los usuarios. Cada usuario puede administrar únicamente su propio perfil, el perfil de su cuenta.
 - La aplicación está diseñada como una muestra educativa, únicamente para aprender a desarrollar aplicaciones web.

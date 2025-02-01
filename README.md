@@ -16,6 +16,7 @@ Aplicación de gestión de productos hecha con fines educativos, para un curso d
 - **Font Awesome** para los íconos.
 - **SQL Server** para la gestión de bases de datos.
 - **AJAX** para la interacción asíncrona con el servidor.
+- **Validaciones** implementadas tanto en **C#** para el backend como en **JavaScript** para la parte interactiva en el frontend.
 
 ### Usuario por Defecto
 Si no deseas crear un nuevo usuario, puedes utilizar el siguiente usuario por defecto:

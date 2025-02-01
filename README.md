@@ -30,7 +30,7 @@ Si no deseas crear un nuevo usuario, puedes utilizar el siguiente usuario por de
 
 Este usuario **no tiene permisos de administrador**, al igual que todos los usuarios que se crean. Sin embargo, las funcionalidades de administrador son visibles para todos los usuarios, pero están **deshabilitadas** para los que no tienen permisos de administración.
 
-###Usuario con permisos de administración 
+### Usuario con permisos de administración 
 - **Usuario**: `` 
 - **Contraseña**: ``
 

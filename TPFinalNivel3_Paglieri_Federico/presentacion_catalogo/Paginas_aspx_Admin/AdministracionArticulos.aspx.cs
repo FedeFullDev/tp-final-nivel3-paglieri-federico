@@ -26,10 +26,7 @@ namespace presentacion_catalogo.Paginas_aspx_Admin
 
         public bool validarAgregarModificarArticulo;
 
-        public bool validarMaxCaracteresNombre;
-        public bool validarMaxCaracteresCodigoArticulo;
-        public bool validarMaxCaracteresDescripcion;
-        public bool validarMaxCaracteresPrecio;
+       
 
         public string imgUrl = string.Empty;
 

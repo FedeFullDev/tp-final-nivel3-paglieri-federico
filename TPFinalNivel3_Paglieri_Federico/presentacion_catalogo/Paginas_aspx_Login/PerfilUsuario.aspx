@@ -7,12 +7,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--  <asp:ScriptManager ID="ScriptRegularExpression" runat="server"></asp:ScriptManager>--%>
+   
 
 
     <section class="perfil">
 
-        <%--  <asp:HiddenField ID="HiddenFieldNavBarResponsiveJSValidationPerfilUsuario" runat="server" />--%>
+       
 
         <section class="perfil_datos">
 

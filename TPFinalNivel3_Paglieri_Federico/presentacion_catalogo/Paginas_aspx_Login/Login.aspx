@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--   <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+    
 
 
     <section class="login">
@@ -112,7 +112,7 @@
                     usuarioContenedorLabelError.style.opacity = "0";
                     contraseñaContenedorLabelError.style.opacity = "0";
 
-                }, 3000)
+                }, 1200)
 
             }
 

@@ -26,7 +26,6 @@ body {
     width: 100%; /* Opcional: controla el ancho */
     overflow-y: auto; /* Habilita el scroll vertical */
     overflow-x: hidden; /* Evita desplazamiento horizontal */
-    border: 0.2rem solid #002eff; /* Borde alrededor */
     background-color: #00fff7; /* Color de fondo */
 }
 
@@ -41,7 +40,7 @@ body {
 
 
 .grid_elemento {
-    border: 0.2rem solid #002eff;
+    
     max-width: 41rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -95,7 +94,6 @@ body {
         width: 90%; /* Opcional: controla el ancho */
         overflow-y: auto; /* Habilita el scroll vertical */
         overflow-x: hidden; /* Evita desplazamiento horizontal */
-        border: 0.2rem solid #002eff; /* Borde alrededor */
         background-color: #00fff7; /* Color de fondo */
     }
 
@@ -136,7 +134,7 @@ body {
             font-weight: bold;
         }
     .grid_elemento {
-        border: 0.2rem solid #002eff;
+  
         max-width: 23rem;
         overflow: hidden;
         text-overflow: ellipsis;
